@@ -19,8 +19,8 @@ ReadyAPI-TestEngine-API\%2Fversion.xml
 ReadyAPI-TestEngine-API\%2Flicense.xml
 ReadyAPI-TestEngine-API\%2Flicense%2Freclaim.xml
 ReadyAPI-TestEngine-API\%2Fsettings.xml
-PostJobs\PostJobs.xml
-PostJobs\Submit400.xml
-PostJobs\Add-License.xml
-PostJobs\Create-User.xml
-Test-Suite-1\Test-Case-1.xml
+Sam-PostJobs\PostJobs.xml
+Sam-PostJobs\Submit400.xml
+Sam-PostJobs\Add-License.xml
+Sam-PostJobs\Create-User.xml
+Test-Suite-1\Sarah-Tests.xml

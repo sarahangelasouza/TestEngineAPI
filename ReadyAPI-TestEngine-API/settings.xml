@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" xsi:type="con:RestService" id="5a255022-c9df-4ad3-aa43-6efe336e3f10" name="ReadyAPI TestEngine API" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" definitionUrl="https://api.swaggerhub.com/apis/SE-Design/readyapi-testengineRusselLocal/1.9.0">
-  <con:description id="80e86c45-a793-4a91-814b-cd95ecce365c">A REST based API testing framework; submit Ready API/SoapUI projects using your favorite HTTP client, one of the existing open-source clients/tools on GitHub to run API tests either asynchronously or synchronously: - Generate your own client from this specification: https://app.swaggerhub.com/apis/smartbear/readyapi-testengine - Use our Jenkins plugin: https://support.smartbear.com/downloads/readyapi/</con:description>
+  <con:description id="a19d6edf-3b54-43f6-bdc3-ec217089f7eb">A REST based API testing framework; submit Ready API/SoapUI projects using your favorite HTTP client, one of the existing open-source clients/tools on GitHub to run API tests either asynchronously or synchronously: - Generate your own client from this specification: https://app.swaggerhub.com/apis/smartbear/readyapi-testengine - Use our Jenkins plugin: https://support.smartbear.com/downloads/readyapi/</con:description>
   <con:settings>
     <con:setting id="5a255022-c9df-4ad3-aa43-6efe336e3f10fileName">ReadyAPI-TestEngine-API</con:setting>
   </con:settings>

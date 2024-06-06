@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="6c67ecb4-e052-4b43-943f-28ed143664e0" name="PostJobs">
-  <con:settings id="54b69630-911a-48e0-b4cb-13c1518c2f24">
-    <con:setting id="6c67ecb4-e052-4b43-943f-28ed143664e0fileName">PostJobs</con:setting>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="6c67ecb4-e052-4b43-943f-28ed143664e0" name="Sam-PostJobs">
+  <con:settings id="c00ab600-3c36-4ea8-9c54-2a917620101a">
+    <con:setting id="6c67ecb4-e052-4b43-943f-28ed143664e0fileName">Sam-PostJobs</con:setting>
   </con:settings>
   <con:runType>PARALLELL</con:runType>
   <con:properties/>
