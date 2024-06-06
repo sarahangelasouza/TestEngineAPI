@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/testjobs" path="/testjobs" id="594d1969-ef17-45aa-b234-cad7452432d9">
+  <con:settings id="73a5523a-bc1b-4c90-b0b1-9cd011bbec63">
+    <con:setting id="594d1969-ef17-45aa-b234-cad7452432d9fileName">%2Ftestjobs</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="getTestjobs" id="9c7a5a2c-6f0c-46c0-a873-c8ac6d42039d" method="GET">
+    <con:description>Use this operation to get results of the latest test runs stored in TestEngine.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>fetch</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Number of testjobs to return. Use `ALL´ to get all testjobs.</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+      <con:sampleContent>[ {
+  "userName" : "string",
+  "projectName" : "string",
+  "status" : "QUEUED",
+  "jobType" : "PROJECT",
+  "totalTime" : 0,
+  "startTime" : 0,
+  "submitTime" : 0,
+  "queueTime" : 0,
+  "testjobId" : "string",
+  "executionParameters" : {
+    "testSuiteName" : "string",
+    "testCaseName" : "string",
+    "securityTestName" : "string",
+    "tags" : [ "string" ]
+  },
+  "message" : "string",
+  "priorityJob" : true
+} ]</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="ee1a1649-1148-4605-af4b-dcb733550c8e" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:method name="postProjectTestjob" id="0721eb74-a801-4350-bbd3-07068ce9fd9b" method="POST">
+    <con:description>Use this operation to send a ReadyAPI test project to TestEngine. TestEngine can execute the entire project, or an individual test suite or a test case in it. To run an individual test suite set the testSuiteName parameter. To run an individual test case set the testSuiteName and testCaseName parameters. To run a security test set the securityTestName parameter. In that case testSuiteName and testCaseName parameters are not allowed. The body of the request should be a ReadyAPI project file. Either send the .xml file as is, or as zipped xml. A zip is needed to send in a composite project or when sending in a project with file dependencies. To override properties in the project submit the project with multipart/form-data along with a json properties file.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>testSuiteName</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>The name of the test suite to run.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>testCaseName</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>The name of the test case to run.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>securityTestName</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>The name of the security test to run.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>environment</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>The target environment for test job.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>async</con:name>
+        <con:value>true</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>true</con:default>
+        <con:description>Specifies when TestEngine replies:&lt;br/>`true` - Immediately.&lt;br/>`false` - After the test job is over.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>callback</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>The URL, to which the results will be posted.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>clientCertFileName</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>The name of the separately provided client certificate file.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>clientCertPassword</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>The password for the separately provided client certificate file.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>projectPassword</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>The password used to decrypt an encrypted project file.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>hostAndPort</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>The endpoint to be used for HTTP requests sent by this test, in the format host:[port].</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>tags</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>A comma-separated list of tags identifying which test suites and test cases to run when executing the test. A test case or test suite must contain all provided tags to be executed. Test suites are filtered by tags only if the testSuiteName parameter is omitted. Test cases are filtered by tags only if the testSuiteName and testCaseName parameters are omitted.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>proxyHost</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>the HTTP proxy host</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>proxyPort</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>the proxy port</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>proxyUsername</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>the proxy username</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>proxyPassword</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>the proxy password</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>timeout</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>the timeout in seconds for running the test job (the queue time is not included)</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>priorityJob</con:name>
+        <con:value>false</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>false</con:default>
+        <con:description>the job will skip ahead of all non priority jobs in the queue (admin user needed)</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+      <con:sampleContent>{
+  "userName" : "string",
+  "projectName" : "string",
+  "status" : "QUEUED",
+  "jobType" : "PROJECT",
+  "totalTime" : 0,
+  "startTime" : 0,
+  "submitTime" : 0,
+  "queueTime" : 0,
+  "testjobId" : "string",
+  "executionParameters" : {
+    "testSuiteName" : "string",
+    "testCaseName" : "string",
+    "securityTestName" : "string",
+    "tags" : [ "string" ]
+  },
+  "message" : "string",
+  "priorityJob" : true,
+  "testSuiteResultReports" : [ {
+    "testSuiteName" : "string",
+    "totalTestSuiteTime" : 0,
+    "testCaseResultReports" : [ {
+      "testCaseName" : "string",
+      "totalTestCaseTime" : 0,
+      "properties" : {
+        "additionalProp1" : "string",
+        "additionalProp2" : "string",
+        "additionalProp3" : "string"
+      },
+      "testStepResultReports" : [ {
+        "passedAssertions" : [ "string" ],
+        "testStepName" : "string",
+        "testStepType" : "string",
+        "totalTestStepTime" : 0,
+        "assertionStatus" : "UNKNOWN",
+        "requestTimings" : {
+          "readTime" : 0,
+          "totalRequestTime" : 0,
+          "connectionTime" : 0,
+          "timeToFirstByte" : 0,
+          "connectTime" : 0,
+          "timeStamp" : 0
+        },
+        "transactionId" : "string",
+        "transaction" : "string",
+        "messages" : [ "string" ],
+        "securityScans" : [ {
+          "checkType" : "string",
+          "status" : "UNKNOWN",
+          "totalSecurityScanTime" : 0,
+          "securityScanRequestResults" : [ {
+            "status" : "UNKNOWN",
+            "requestTimings" : {
+              "readTime" : 0,
+              "totalRequestTime" : 0,
+              "connectionTime" : 0,
+              "timeToFirstByte" : 0,
+              "connectTime" : 0,
+              "timeStamp" : 0
+            },
+            "changedParams" : {
+              "additionalProp1" : "string",
+              "additionalProp2" : "string",
+              "additionalProp3" : "string"
+            },
+            "transactionId" : "string",
+            "transaction" : "string",
+            "messages" : [ "string" ]
+          } ]
+        } ]
+      } ]
+    } ]
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/junit+xml</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+      <con:sampleContent>&lt;string>string&lt;/string></con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/pdf</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>412</con:status>
+      <con:params/>
+      <con:description>Request contains unresolved dependencies needed to execute the test job. It can be data sources, attachment or client certificates mentioned in test job but not provided in the request. Resend the request with all mentioned files.</con:description>
+      <con:sampleContent>[ {
+  "message" : "string",
+  "fileName" : "string"
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/zip</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/xml</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>multipart/form-data</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="828ff962-1a04-47a7-9e54-940ce3220fda" mediaType="application/zip" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:request name="Request 2" id="dbbf5ccd-917d-4895-9b5b-e48efd4ceeef" mediaType="application/xml" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:request name="Request 3" id="6bd56cd3-51a2-4f08-9fb9-7dc4381bbc68" mediaType="multipart/form-data" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:method name="deleteTestJobs" id="74f6de9e-57dd-4820-b2f5-cbc325170a38" method="DELETE">
+    <con:description>Delete jobs older than the specified date. If a date is not provided, `maxDaysToKeep` and `maxJobsToKeep` value is taken from the configuration file and either config deleting more number of jobs will be the considered. The default values can be changed by changing `maxDaysToKeep` and `maxJobsToKeep` in the configuration file. To only remove a single testjob use the endpoint DELETE &lt;code>/testjobs/{testjobId}/delete&lt;/code> instead.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>before</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Testjobs older than this date/time will be deleted.</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Test jobs were successfully deleted</con:description>
+      <con:sampleContent>0</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="7038be75-e79e-4195-ad66-444c115a5bad" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

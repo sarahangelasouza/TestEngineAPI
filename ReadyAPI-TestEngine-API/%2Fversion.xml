@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/version" path="/version" id="0ddf4ee6-62f7-43c4-9ecf-9ba2ae2e0621">
+  <con:settings id="82689209-80d7-4b9b-8eed-01d2f8a38b26">
+    <con:setting id="0ddf4ee6-62f7-43c4-9ecf-9ba2ae2e0621fileName">%2Fversion</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="d8800a8e-f6d3-4c01-bad6-f699405e0aef" method="GET">
+    <con:description>Get version of the TestEngine server</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+      <con:sampleContent>{
+  "version" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="ec46fe66-f152-403c-a4c0-f82894a7cb23" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

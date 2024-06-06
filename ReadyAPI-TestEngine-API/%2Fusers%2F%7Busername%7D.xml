@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/users/{username}" path="/users/{username}" id="6c4eb979-71d6-4765-b7d4-69d71308e07e">
+  <con:settings id="eba919b4-6e96-4de0-ae61-5ca1556f612a">
+    <con:setting id="6c4eb979-71d6-4765-b7d4-69d71308e07efileName">%2Fusers%2F%7Busername%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="085732c5-78c4-4b91-9349-f5993e4ad8e2" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>username</con:name>
+        <con:style>TEMPLATE</con:style>
+        <con:description>The username to request information for</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+      <con:sampleContent>{
+  "userName" : "string",
+  "password" : "string",
+  "admin" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>403</con:status>
+      <con:params/>
+      <con:description>The authenticated user does not have access to the requested user</con:description>
+      <con:sampleContent>{
+  "code" : 0,
+  "message" : "string",
+  "details" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:description>The user does not exist</con:description>
+      <con:sampleContent>{
+  "code" : 0,
+  "message" : "string",
+  "details" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="8efe999c-072c-4dbd-9319-612af8966767" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:method name="DELETE" id="d8b27e1e-2ee3-4e1e-8370-1c9a640b8973" method="DELETE">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>username</con:name>
+        <con:style>TEMPLATE</con:style>
+        <con:description>The username to request information for</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>403</con:status>
+      <con:params/>
+      <con:description>The authenticated user does not have access to the requested user</con:description>
+      <con:sampleContent>{
+  "code" : 0,
+  "message" : "string",
+  "details" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:description>user not found</con:description>
+      <con:sampleContent>{
+  "code" : 0,
+  "message" : "string",
+  "details" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="981e25e1-532c-4fb2-ae05-1d2f63c0de06" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:method name="PUT" id="3d417afe-9356-4f96-9a23-fc174fb11344" method="PUT">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>username</con:name>
+        <con:style>TEMPLATE</con:style>
+        <con:description>The username to update information for</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+      <con:sampleContent>{
+  "userName" : "string",
+  "password" : "string",
+  "admin" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>403</con:status>
+      <con:params/>
+      <con:description>The authenticated user does not have access to the requested user</con:description>
+      <con:sampleContent>{
+  "code" : 0,
+  "message" : "string",
+  "details" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:description>The user does not exist</con:description>
+      <con:sampleContent>{
+  "code" : 0,
+  "message" : "string",
+  "details" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "userName" : "string",
+  "password" : "string",
+  "admin" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="cb535e11-4244-4643-b1dd-13116e93242d" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request>{\r
+  "userName" : "string",\r
+  "password" : "string",\r
+  "admin" : true\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

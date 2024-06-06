@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/testjobs/{testjobId}/priority" path="/testjobs/{testjobId}/priority" id="c7f9354d-a1af-4181-8ad8-62cbf27b6ae7">
+  <con:settings id="93a8f568-5417-4b8e-8487-93c53913652c">
+    <con:setting id="c7f9354d-a1af-4181-8ad8-62cbf27b6ae7fileName">%2Ftestjobs%2F%7BtestjobId%7D%2Fpriority</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="updateTestjobPriority" id="7940c18e-cfce-490e-a3a5-2d0b6c40c1b0" method="PUT">
+    <con:description>Use this operation to change the priority of the testjob specified by &lt;i>testjobId&lt;/i>. You can find the testjobId in the response to your testjob request, or you can send a GET &lt;code>/testjobs&lt;/code> request to the TestEngine. Only admin users are allowed to change priority.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>testjobId</con:name>
+        <con:style>TEMPLATE</con:style>
+        <con:description>The unique identifier of a test job</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>priorityJob</con:name>
+        <con:value>false</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>false</con:default>
+        <con:description>the job will skip ahead of all non priority jobs in the queue (admin user needed)</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="a8300c49-c7eb-451f-997f-54e20c542fdc" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

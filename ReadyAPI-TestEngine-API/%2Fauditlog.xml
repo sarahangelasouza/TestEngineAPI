@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/auditlog" path="/auditlog" id="f1f6c369-feb0-4232-9d74-be69e93109c7">
+  <con:settings id="2d05b506-807b-4d5a-8462-aa8a22a7a55a">
+    <con:setting id="f1f6c369-feb0-4232-9d74-be69e93109c7fileName">%2Fauditlog</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="6f992cd7-0fdf-4739-9775-a4c49e3e16f7" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>userName</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>The username to request information for</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>from</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>start date and time, example: 2017-07-21T17:32:28Z</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>to</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>end date and time, example: 2017-07-21T17:32:28Z</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>sortOrder</con:name>
+        <con:value>DESC</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>DESC</con:default>
+        <con:description>Optional parameter for sorting the list on the time.</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+      <con:sampleContent>[ {
+  "eventTime" : "2015-07-20T15:49:04-07:00",
+  "userName" : "string",
+  "eventType" : "string",
+  "eventData" : {
+    "additionalProp1" : "string",
+    "additionalProp2" : "string",
+    "additionalProp3" : "string"
+  }
+} ]</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="05ae4aeb-b135-4d03-a6a2-ec43b223bc63" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

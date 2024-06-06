@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/testjobs/{testjobId}/report" path="/testjobs/{testjobId}/report" id="e2e0c9b1-fbd6-4c38-ae3c-b5d38bee2a1c">
+  <con:settings id="851ef8fb-c4c4-495c-9208-8cfdc16de028">
+    <con:setting id="e2e0c9b1-fbd6-4c38-ae3c-b5d38bee2a1cfileName">%2Ftestjobs%2F%7BtestjobId%7D%2Freport</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="getTestjobReport" id="0da73127-4f46-48cd-93fa-42a54dbedff9" method="GET">
+    <con:description>Use this operation to get information on the testjob specified by &lt;i>testjobId&lt;/i>.  You can find in the response to your testjob request , or you can send a GET &lt;code>/testjobs&lt;/code> request to TestEngine.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>testjobId</con:name>
+        <con:style>TEMPLATE</con:style>
+        <con:description>The unique identifier of a test job</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+      <con:sampleContent>{
+  "userName" : "string",
+  "projectName" : "string",
+  "status" : "QUEUED",
+  "jobType" : "PROJECT",
+  "totalTime" : 0,
+  "startTime" : 0,
+  "submitTime" : 0,
+  "queueTime" : 0,
+  "testjobId" : "string",
+  "executionParameters" : {
+    "testSuiteName" : "string",
+    "testCaseName" : "string",
+    "securityTestName" : "string",
+    "tags" : [ "string" ]
+  },
+  "message" : "string",
+  "priorityJob" : true,
+  "testSuiteResultReports" : [ {
+    "testSuiteName" : "string",
+    "totalTestSuiteTime" : 0,
+    "testCaseResultReports" : [ {
+      "testCaseName" : "string",
+      "totalTestCaseTime" : 0,
+      "properties" : {
+        "additionalProp1" : "string",
+        "additionalProp2" : "string",
+        "additionalProp3" : "string"
+      },
+      "testStepResultReports" : [ {
+        "passedAssertions" : [ "string" ],
+        "testStepName" : "string",
+        "testStepType" : "string",
+        "totalTestStepTime" : 0,
+        "assertionStatus" : "UNKNOWN",
+        "requestTimings" : {
+          "readTime" : 0,
+          "totalRequestTime" : 0,
+          "connectionTime" : 0,
+          "timeToFirstByte" : 0,
+          "connectTime" : 0,
+          "timeStamp" : 0
+        },
+        "transactionId" : "string",
+        "transaction" : "string",
+        "messages" : [ "string" ],
+        "securityScans" : [ {
+          "checkType" : "string",
+          "status" : "UNKNOWN",
+          "totalSecurityScanTime" : 0,
+          "securityScanRequestResults" : [ {
+            "status" : "UNKNOWN",
+            "requestTimings" : {
+              "readTime" : 0,
+              "totalRequestTime" : 0,
+              "connectionTime" : 0,
+              "timeToFirstByte" : 0,
+              "connectTime" : 0,
+              "timeStamp" : 0
+            },
+            "changedParams" : {
+              "additionalProp1" : "string",
+              "additionalProp2" : "string",
+              "additionalProp3" : "string"
+            },
+            "transactionId" : "string",
+            "transaction" : "string",
+            "messages" : [ "string" ]
+          } ]
+        } ]
+      } ]
+    } ]
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/junit+xml</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+      <con:sampleContent>&lt;string>string&lt;/string></con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/pdf</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+    </con:representation>
+    <con:request name="Request 1" id="6f585528-9d39-4e79-af95-c068621874de" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

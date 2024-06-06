@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/testjobs/{testjobId}" path="/testjobs/{testjobId}" id="e9c22025-b6c6-4a2e-8e5c-0f7db46ee353">
+  <con:settings id="33877b22-2064-437b-90b9-e7d50cc4f5dd">
+    <con:setting id="e9c22025-b6c6-4a2e-8e5c-0f7db46ee353fileName">%2Ftestjobs%2F%7BtestjobId%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="cancelTestjob" id="23481c90-df14-4bee-8484-b68dca7c0a05" method="DELETE">
+    <con:description>Use this operation to stop the run specified by &lt;i>testjobId&lt;/i>. You can find the testjobId in the response to your testjob request, or you can send a GET &lt;code>/testjobs&lt;/code> request to the TestEngine.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>testjobId</con:name>
+        <con:style>TEMPLATE</con:style>
+        <con:description>The unique identifier of a test job</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="1e4741b2-d333-442d-8c39-804e5467a312" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

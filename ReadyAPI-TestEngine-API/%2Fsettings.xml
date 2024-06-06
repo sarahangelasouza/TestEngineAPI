@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/settings" path="/settings" id="9ca079b2-57dc-45f2-ad3a-38b90bec86c2">
+  <con:settings id="98ba8f4d-e883-432d-a877-4e086b888f09">
+    <con:setting id="9ca079b2-57dc-45f2-ad3a-38b90bec86c2fileName">%2Fsettings</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="getServerSettings" id="e48351a9-6aea-4559-bdb2-e0e08f486436" method="GET">
+    <con:description>Retrieve current settings from the server.</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+      <con:sampleContent>{
+  "maxDaysToKeep" : 0,
+  "maxJobsToKeep" : 0,
+  "allowedConnectTargets" : [ "string" ],
+  "allowedIncomingConnectTargets" : [ "string" ],
+  "allowedFilePaths" : [ "string" ],
+  "testStepJdbcConnectionsAllowed" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="e8fc317f-06f4-4377-8918-0d73a2448813" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:method name="updateServerSettings" id="c0be5a06-3eed-497c-bb38-3ef0e83753b6" method="PUT">
+    <con:description>Update the settings on the server.</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Settings successfully updated</con:description>
+      <con:sampleContent>{
+  "maxDaysToKeep" : 0,
+  "maxJobsToKeep" : 0,
+  "allowedConnectTargets" : [ "string" ],
+  "allowedIncomingConnectTargets" : [ "string" ],
+  "allowedFilePaths" : [ "string" ],
+  "testStepJdbcConnectionsAllowed" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "maxDaysToKeep" : 0,
+  "maxJobsToKeep" : 0,
+  "allowedConnectTargets" : [ "string" ],
+  "allowedIncomingConnectTargets" : [ "string" ],
+  "allowedFilePaths" : [ "string" ],
+  "testStepJdbcConnectionsAllowed" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="156278e3-dfce-4634-b64e-75b517f6c523" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request>{\r
+  "maxDaysToKeep" : 0,\r
+  "maxJobsToKeep" : 0,\r
+  "allowedConnectTargets" : [ "string" ],\r
+  "allowedIncomingConnectTargets" : [ "string" ],\r
+  "allowedFilePaths" : [ "string" ],\r
+  "testStepJdbcConnectionsAllowed" : true\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

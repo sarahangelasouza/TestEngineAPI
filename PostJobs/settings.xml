@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="6c67ecb4-e052-4b43-943f-28ed143664e0" name="PostJobs">
+  <con:settings id="54b69630-911a-48e0-b4cb-13c1518c2f24">
+    <con:setting id="6c67ecb4-e052-4b43-943f-28ed143664e0fileName">PostJobs</con:setting>
+  </con:settings>
+  <con:runType>PARALLELL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testSuite>

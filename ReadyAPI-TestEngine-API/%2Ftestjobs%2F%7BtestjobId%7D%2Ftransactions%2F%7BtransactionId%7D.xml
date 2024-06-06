@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/testjobs/{testjobId}/transactions/{transactionId}" path="/testjobs/{testjobId}/transactions/{transactionId}" id="b81cfa0a-5456-446c-ad66-0cdefeea94ba">
+  <con:settings id="78efc507-76fa-4f21-8578-683e00726492">
+    <con:setting id="b81cfa0a-5456-446c-ad66-0cdefeea94bafileName">%2Ftestjobs%2F%7BtestjobId%7D%2Ftransactions%2F%7BtransactionId%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="getTransaction" id="6c824de0-b27f-483b-bdb0-35e26d73dc95" method="GET">
+    <con:description>A particular test job of a test step is referred as transaction. Use this operation to get the request and response for a transaction in HAR format.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>testjobId</con:name>
+        <con:style>TEMPLATE</con:style>
+        <con:description>The unique identifier of a test job</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>transactionId</con:name>
+        <con:style>TEMPLATE</con:style>
+        <con:description>The id of the transaction (test step test job) to get the message exchange (request and response) for.</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>OK</con:description>
+      <con:sampleContent>{
+  "log" : {
+    "version" : "string",
+    "creator" : {
+      "name" : "string",
+      "version" : "string",
+      "comment" : "string"
+    },
+    "browser" : {
+      "name" : "string",
+      "version" : "string",
+      "comment" : "string"
+    },
+    "pages" : [ {
+      "startedDateTime" : "string",
+      "id" : "string",
+      "title" : "string",
+      "pageTimings" : {
+        "onContentLoad" : 0,
+        "onLoad" : 0,
+        "comment" : "string"
+      },
+      "comment" : "string"
+    } ],
+    "entries" : [ {
+      "pageref" : "string",
+      "startedDateTime" : "string",
+      "time" : 0,
+      "request" : {
+        "method" : "string",
+        "url" : "string",
+        "httpVersion" : "string",
+        "cookies" : [ {
+          "name" : "string",
+          "value" : "string",
+          "path" : "string",
+          "domain" : "string",
+          "expires" : "string",
+          "httpOnly" : false,
+          "secure" : false,
+          "comment" : "string"
+        } ],
+        "headers" : [ {
+          "name" : "string",
+          "value" : "string",
+          "comment" : "string"
+        } ],
+        "queryString" : [ {
+          "name" : "string",
+          "value" : "string",
+          "comment" : "string"
+        } ],
+        "postData" : {
+          "mimeType" : "string",
+          "params" : [ {
+            "name" : "string",
+            "value" : "string",
+            "fileName" : "string",
+            "contentType" : "string",
+            "comment" : "string"
+          } ],
+          "text" : "string",
+          "comment" : "string"
+        },
+        "headersSize" : 0,
+        "bodySize" : 0,
+        "comment" : "string"
+      },
+      "response" : {
+        "status" : 0,
+        "statusText" : "string",
+        "httpVersion" : "string",
+        "cookies" : [ {
+          "name" : "string",
+          "value" : "string",
+          "path" : "string",
+          "domain" : "string",
+          "expires" : "string",
+          "httpOnly" : false,
+          "secure" : false,
+          "comment" : "string"
+        } ],
+        "headers" : [ {
+          "name" : "string",
+          "value" : "string",
+          "comment" : "string"
+        } ],
+        "content" : {
+          "size" : 0,
+          "compression" : 0,
+          "mimeType" : "string",
+          "text" : "string",
+          "comment" : "string"
+        },
+        "redirectURL" : "string",
+        "headersSize" : 0,
+        "bodySize" : 0,
+        "comment" : "string"
+      },
+      "cache" : {
+        "beforeRequest" : {
+          "expires" : "2015-07-20T15:49:04-07:00",
+          "lastAccess" : "2015-07-20T15:49:04-07:00",
+          "hitCount" : 0,
+          "comment" : "string",
+          "etag" : "string"
+        },
+        "afterRequest" : {
+          "expires" : "2015-07-20T15:49:04-07:00",
+          "lastAccess" : "2015-07-20T15:49:04-07:00",
+          "hitCount" : 0,
+          "comment" : "string",
+          "etag" : "string"
+        },
+        "comment" : "string"
+      },
+      "timings" : {
+        "blocked" : 0,
+        "connect" : 0,
+        "send" : 0,
+        "wait" : 0,
+        "receive" : 0,
+        "ssl" : 0,
+        "comment" : "string"
+      },
+      "serverIPAddress" : "string",
+      "connection" : "string",
+      "comment" : "string"
+    } ],
+    "comment" : "string"
+  }
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="5c2589fc-4dcb-4413-920e-289190437d73" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080/api/v1</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="74bbbf5c-1c8b-4412-9d8c-a1b1c443fc40">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>
