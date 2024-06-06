@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" id="0da58ac2-903f-4167-9e15-05ae07b27c97" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Sarah-Tests" searchProperties="true" timeout="0">
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="0da58ac2-903f-4167-9e15-05ae07b27c97" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="PostJob-local" searchProperties="true" timeout="0">
   <con:settings id="43622025-6580-4682-a66d-947018cde083">
-    <con:setting id="0da58ac2-903f-4167-9e15-05ae07b27c97fileName">Sarah-Tests</con:setting>
+    <con:setting id="0da58ac2-903f-4167-9e15-05ae07b27c97fileName">PostJob-local</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="REST Request" id="dbab987f-f46b-4ac8-952b-9846aac35c6d">
     <con:settings/>

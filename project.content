@@ -23,4 +23,4 @@ Sam-PostJobs\PostJobs.xml
 Sam-PostJobs\Submit400.xml
 Sam-PostJobs\Add-License.xml
 Sam-PostJobs\Create-User.xml
-Test-Suite-1\Sarah-Tests.xml
+Sarah-Tests\PostJob-local.xml

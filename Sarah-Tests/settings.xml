@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="1fb420df-836e-4f92-bdbc-e24e34e351f9" name="Test Suite 1">
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="1fb420df-836e-4f92-bdbc-e24e34e351f9" name="Sarah-Tests">
   <con:settings id="b58c733b-0aea-4979-af6d-06460a205b3d">
-    <con:setting id="1fb420df-836e-4f92-bdbc-e24e34e351f9fileName">Test-Suite-1</con:setting>
+    <con:setting id="1fb420df-836e-4f92-bdbc-e24e34e351f9fileName">Sarah-Tests</con:setting>
   </con:settings>
   <con:runType>SEQUENTIAL</con:runType>
   <con:properties/>
